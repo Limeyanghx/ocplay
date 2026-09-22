@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>作品上传 · OCplay</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="deco-bg"></div>
+
+<nav class="navbar">
+  <div class="nav-logo"><span class="logo-icon">🎨</span><span class="logo-text">OCplay</span></div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="events.html">展会活动</a>
+    <a href="oc-gallery.html">OC作品广场</a>
+    <a href="booth-apply.html">申摊报名</a>
+    <a href="profile.html">个人中心</a>
+  </div>
+  <div class="nav-actions">
+    <a href="upload.html" class="btn btn-soft btn-sm">上传作品</a>
+    <a href="auth.html" class="btn btn-primary btn-sm">登录 / 注册</a>
+  </div>
+</nav>
+
+<section class="section container">
+  <div class="section-head">
+    <h2 class="section-title"><span class="icon">🎨</span>上传原创OC作品</h2>
+    <span class="sub" style="color:var(--text-muted);font-size:14px">提交后进入审核队列，通过后公开展示</span>
+  </div>
+
+  <div style="max-width:860px;margin:0 auto">
+    <!-- 素材上传 -->
+    <div class="detail-block">
+      <h2>🖼 作品素材上传</h2>
+      <div class="form-group">
+        <label class="form-label">作品图片（人设立绘 / 细节图 / 实物图）<span class="req">*</span></label>
+        <div class="upload-zone" id="workUpload">
+          <input type="file" multiple hidden accept="image/*">
+          <div class="icon">🎨</div>
+          <div class="text">点击或拖拽上传 <strong>原创OC作品图片</strong></div>
+          <div class="form-hint">支持 JPG/PNG/WEBP，单张不超过 10MB，建议上传高清原图</div>
+        </div>
+        <div class="upload-preview" id="workPreview"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">简短创作文案（可选）</label>
+        <textarea class="form-textarea" placeholder="补充创作故事、角色设定背景等，帮助观众理解你的作品"></textarea>
+      </div>
+    </div>
+
+    <!-- 作品信息录入 -->
+    <div class="detail-block">
+      <h2>📝 作品信息录入</h2>
+      <div class="form-group">
+        <label class="form-label">作品名称 <span class="req">*</span></label>
+        <input class="form-input" placeholder="如：星野绫 · 银河少女">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">作品分类 <span class="req">*</span></label>
+          <select class="form-select">
+            <option>OC人设</option>
+            <option>手工制品</option>
+            <option>周边衍生</option>
+            <option>图文企划</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">关联展会</label>
+          <select class="form-select">
+            <option>不关联展会</option>
+            <option>OC原创角色ONLY展 · 第七届</option>
+            <option>综合OC创作交流展 · 春季</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">OC人设介绍</label>
+        <textarea class="form-textarea" placeholder="原创角色的设定、性格、背景故事等"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">制品说明（如为手工/周边）</label>
+        <textarea class="form-textarea" placeholder="材质、尺寸、工艺、限量数量等"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">创作理念</label>
+        <textarea class="form-textarea" placeholder="创作灵感来源、想表达的主题等"></textarea>
+      </div>
+    </div>
+
+    <!-- 原创声明 -->
+    <div class="declare-box">
+      <label>
+        <input type="checkbox">
+        <div class="text">
+          <strong>原创承诺声明</strong><br>
+          本人承诺所上传作品为原创OC内容，不涉及抄袭搬运、不包含违规低俗内容、不侵犯他人商业版权。如经审核发现违规，本人愿意承担下架处理及账号封禁等后果。
+        </div>
+      </label>
+    </div>
+
+    <!-- 状态预览 -->
+    <div class="detail-block" style="background:var(--bg)">
+      <div style="display:flex;align-items:center;gap:12px;font-size:14px">
+        <span style="font-size:24px">⏳</span>
+        <div>
+          <strong>提交后审核流程：</strong>
+          <span style="color:var(--text-light)">待审核 → 审核通过（公开展示）/ 审核驳回（查看原因修改重提）</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:24px">
+      <button class="btn btn-outline btn-lg">保存草稿</button>
+      <button class="btn btn-primary btn-lg">提交审核</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom">© 2026 OCplay · OC原创角色展会综合服务平台</div></div>
+</footer>
+<script src="js/main.js"></script>
+<script>initUpload('workUpload','workPreview');</script>
+</body>
+</html>

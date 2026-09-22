@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公告与配置 · OCplay后台</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="deco-bg"></div>
+
+<nav class="navbar">
+  <div class="nav-logo"><span class="logo-icon">🎨</span><span class="logo-text">OCplay</span></div>
+  <div class="nav-links"><a href="../index.html">前台首页</a></div>
+  <div class="nav-actions"><a href="../profile.html" class="btn btn-ghost btn-sm">退出管理</a></div>
+</nav>
+
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="group-label">数据概览</div>
+    <a href="dashboard.html">📊 数据仪表盘</a>
+    <div class="group-label">展会运营</div>
+    <a href="events.html">🎪 展会活动管理</a>
+    <a href="tickets.html">🎟 票务订单管理</a>
+    <div class="group-label">内容审核</div>
+    <a href="review.html">✅ 内容审核中心</a>
+    <div class="group-label">用户与配置</div>
+    <a href="users.html">👥 用户管理</a>
+    <a href="config.html" class="active">⚙ 公告与配置</a>
+  </aside>
+
+  <main class="admin-main">
+    <h1>平台公告与配置</h1>
+    <div class="breadcrumb">首页 / 用户与配置 / 公告与配置</div>
+
+    <!-- Tab切换 -->
+    <div class="profile-tabs" data-tabs data-target="#configPanels">
+      <a class="active" data-tab="notice" style="cursor:pointer">全局公告</a>
+      <a data-tab="basic" style="cursor:pointer">基础配置</a>
+      <a data-tab="rules" style="cursor:pointer">规则配置</a>
+      <a data-tab="keywords" style="cursor:pointer">关键词过滤</a>
+    </div>
+
+    <div id="configPanels" style="max-width:760px">
+      <!-- 全局公告 -->
+      <div data-panel="notice">
+        <div class="detail-block">
+          <h2>📢 发布全局公告</h2>
+          <div class="form-group"><label class="form-label">公告标题 <span class="req">*</span></label><input class="form-input" placeholder="如：平台购票规则更新通知"></div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">公告类型</label>
+              <select class="form-select"><option>平台通用规则</option><option>活动通知</option><option>版本更新</option><option>紧急通知</option></select>
+            </div>
+            <div class="form-group"><label class="form-label">是否置顶</label>
+              <select class="form-select"><option>不置顶</option><option>置顶</option></select>
+            </div>
+          </div>
+          <div class="form-group"><label class="form-label">公告内容 <span class="req">*</span></label><textarea class="form-textarea" style="min-height:140px" placeholder="输入公告正文内容..."></textarea></div>
+          <button class="btn btn-primary">发布公告</button>
+        </div>
+
+        <div class="detail-block">
+          <h2>📋 已发布公告</h2>
+          <div class="data-table">
+            <table>
+              <thead><tr><th>标题</th><th>类型</th><th>发布时间</th><th>状态</th><th>操作</th></tr></thead>
+              <tbody>
+                <tr><td><strong>申摊报名已开启通知</strong> 🔝</td><td>活动通知</td><td>2026-02-20</td><td><span class="badge badge-mint">已发布</span></td><td class="actions"><button class="btn btn-ghost btn-sm">编辑</button><button class="btn btn-ghost btn-sm" style="color:var(--coral)">撤回</button></td></tr>
+                <tr><td>购票规则更新</td><td>平台通用规则</td><td>2026-02-15</td><td><span class="badge badge-mint">已发布</span></td><td class="actions"><button class="btn btn-ghost btn-sm">编辑</button><button class="btn btn-ghost btn-sm" style="color:var(--coral)">撤回</button></td></tr>
+                <tr><td>OC作品审核规则公示</td><td>平台通用规则</td><td>2026-02-10</td><td><span class="badge badge-mint">已发布</span></td><td class="actions"><button class="btn btn-ghost btn-sm">编辑</button><button class="btn btn-ghost btn-sm" style="color:var(--coral)">撤回</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 基础配置 -->
+      <div data-panel="basic" style="display:none">
+        <div class="detail-block">
+          <h2>🎨 网站基础配置</h2>
+          <div class="form-group"><label class="form-label">网站LOGO</label>
+            <div class="upload-zone" style="padding:24px"><div class="icon">🖼</div><div class="text">点击上传LOGO（建议200×60）</div></div>
+          </div>
+          <div class="form-group"><label class="form-label">首页轮播图管理</label>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg);border-radius:10px">
+                <div style="width:80px;height:45px;border-radius:8px;background:linear-gradient(135deg,#FF8FAB,#B4A7E8)"></div>
+                <div style="flex:1"><strong>Banner 1</strong><div style="font-size:12px;color:var(--text-muted)">OC原创角色ONLY展·第七届</div></div>
+                <button class="btn btn-ghost btn-sm">编辑</button><button class="btn btn-ghost btn-sm" style="color:var(--coral)">删除</button>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg);border-radius:10px">
+                <div style="width:80px;height:45px;border-radius:8px;background:linear-gradient(135deg,#A8E6CF,#A0D8F1)"></div>
+                <div style="flex:1"><strong>Banner 2</strong><div style="font-size:12px;color:var(--text-muted)">三周年庆典企划</div></div>
+                <button class="btn btn-ghost btn-sm">编辑</button><button class="btn btn-ghost btn-sm" style="color:var(--coral)">删除</button>
+              </div>
+              <button class="btn btn-outline btn-sm">➕ 新增轮播图</button>
+            </div>
+          </div>
+          <div class="form-group"><label class="form-label">网站名称</label><input class="form-input" value="OCplay · OC原创角色展会平台"></div>
+          <div class="form-group"><label class="form-label">客服联系方式</label><input class="form-input" value="service@ocplay.com"></div>
+          <button class="btn btn-primary">保存配置</button>
+        </div>
+      </div>
+
+      <!-- 规则配置 -->
+      <div data-panel="rules" style="display:none">
+        <div class="detail-block">
+          <h2>📜 平台规则配置</h2>
+          <div class="form-group"><label class="form-label">平台总规则</label><textarea class="form-textarea" style="min-height:100px">OCplay平台致力于原创OC角色交流，所有用户须遵守原创内容规范，禁止搬运抄袭、违规低俗内容...</textarea></div>
+          <div class="form-group"><label class="form-label">审核规则</label><textarea class="form-textarea" style="min-height:100px">1.作品须为原创OC内容 2.无违规低俗 3.无抄袭搬运 4.无商业侵权。审核周期3个工作日...</textarea></div>
+          <div class="form-group"><label class="form-label">购票须知</label><textarea class="form-textarea" style="min-height:100px">1.每位用户单场限购3张 2.开展前7天可全额退票 3.7天内退票收30%手续费 4.开始后不退票...</textarea></div>
+          <div class="form-group"><label class="form-label">申摊须知</label><textarea class="form-textarea" style="min-height:100px">1.须为注册用户 2.作品须通过原创审核 3.摊位售卖须为原创OC相关 4.审核通过后缴费...</textarea></div>
+          <button class="btn btn-primary">保存规则</button>
+        </div>
+      </div>
+
+      <!-- 关键词过滤 -->
+      <div data-panel="keywords" style="display:none">
+        <div class="detail-block">
+          <h2>🚫 违规关键词过滤</h2>
+          <p style="font-size:13px;color:var(--text-light);margin-bottom:16px">设置违规关键词，系统将自动拦截包含此类词汇的作品文案与留言内容。</p>
+          <div class="form-group"><label class="form-label">新增违规关键词</label>
+            <div style="display:flex;gap:10px">
+              <input class="form-input" placeholder="输入关键词后回车添加" style="flex:1">
+              <button class="btn btn-primary">添加</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">已设置关键词（28个）</label>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;padding:16px;background:var(--bg);border-radius:12px;min-height:80px">
+              <span class="badge badge-gray" style="font-size:13px;padding:5px 12px">关键词A ×</span>
+              <span class="badge badge-gray" style="font-size:13px;padding:5px 12px">关键词B ×</span>
+              <span class="badge badge-gray" style="font-size:13px;padding:5px 12px">关键词C ×</span>
+              <span class="badge badge-gray" style="font-size:13px;padding:5px 12px">关键词D ×</span>
+              <span class="badge badge-gray" style="font-size:13px;padding:5px 12px">关键词E ×</span>
+            </div>
+          </div>
+          <div class="form-group"><label class="form-label">拦截处理方式</label>
+            <select class="form-select"><option>自动拦截并通知用户修改</option><option>自动拦截并标记待人工审核</option><option>直接驳回并记录违规</option></select>
+          </div>
+          <button class="btn btn-primary">保存设置</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
