@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>申摊报名 · OCplay</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="deco-bg"></div>
+
+<nav class="navbar">
+  <div class="nav-logo"><span class="logo-icon">🎨</span><span class="logo-text">OCplay</span></div>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="events.html">展会活动</a>
+    <a href="oc-gallery.html">OC作品广场</a>
+    <a href="booth-apply.html" class="active">申摊报名</a>
+    <a href="profile.html">个人中心</a>
+  </div>
+  <div class="nav-actions">
+    <a href="upload.html" class="btn btn-soft btn-sm">上传作品</a>
+    <a href="auth.html" class="btn btn-primary btn-sm">登录 / 注册</a>
+  </div>
+</nav>
+
+<section class="section container">
+  <div class="section-head">
+    <h2 class="section-title"><span class="icon">🏪</span>申摊报名</h2>
+    <span class="sub" style="color:var(--text-muted);font-size:14px">面向OC创作者的摊位申请</span>
+  </div>
+
+  <div class="detail-layout">
+    <!-- 主表单区 -->
+    <div class="detail-main">
+      <!-- 展会选择 -->
+      <div class="detail-block">
+        <h2>🎪 选择展会</h2>
+        <div class="form-group">
+          <label class="form-label">报名展会 <span class="req">*</span></label>
+          <select class="form-select">
+            <option>OC原创角色ONLY展 · 第七届（报名截止 2026.03.15）</option>
+            <option>综合OC创作交流展 · 春季（报名截止 2026.02.20）</option>
+            <option>夜行OC ONLY · 暗系角色专场（报名截止 2026.04.10）</option>
+          </select>
+          <div class="form-hint">仅显示报名未截止的展会</div>
+        </div>
+      </div>
+
+      <!-- 摊主信息 -->
+      <div class="detail-block">
+        <h2>👤 摊主信息</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">摊主姓名 / 昵称 <span class="req">*</span></label>
+            <input class="form-input" placeholder="请输入真实姓名或常用昵称">
+          </div>
+          <div class="form-group">
+            <label class="form-label">联系电话 <span class="req">*</span></label>
+            <input class="form-input" placeholder="手机号码">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">微信号 / QQ</label>
+            <input class="form-input" placeholder="便于审核沟通联系">
+          </div>
+          <div class="form-group">
+            <label class="form-label">邮箱</label>
+            <input class="form-input" placeholder="接收审核结果通知">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">摊位名称 <span class="req">*</span></label>
+          <input class="form-input" placeholder="现场摊位招牌展示名，如「星砂铺」">
+        </div>
+      </div>
+
+      <!-- 摊位类型 -->
+      <div class="detail-block">
+        <h2>🏷 摊位类型选择</h2>
+        <div class="booth-type selected">
+          <span class="icon">📐</span>
+          <div class="info">
+            <div class="name">标准摊位</div>
+            <div class="desc">1.8m×0.8m标准桌，含2张椅子，适合一般OC制品展示</div>
+          </div>
+          <span class="price">¥200</span>
+        </div>
+        <div class="booth-type">
+          <span class="icon">💎</span>
+          <div class="info">
+            <div class="name">精品摊位</div>
+            <div class="desc">1.8m×1.5m大空间，含背景板，适合大型制品/立绘展示</div>
+          </div>
+          <span class="price">¥500</span>
+        </div>
+        <div class="booth-type">
+          <span class="icon">🍵</span>
+          <div class="info">
+            <div class="name">餐饮摊位</div>
+            <div class="desc">含餐饮资格，需额外食品卫生证明，限20个</div>
+          </div>
+          <span class="price">¥350</span>
+        </div>
+      </div>
+
+      <!-- 售卖作品清单 -->
+      <div class="detail-block">
+        <h2>📦 售卖 / 展示作品清单</h2>
+        <div class="form-group">
+          <label class="form-label">作品及制品清单 <span class="req">*</span></label>
+          <textarea class="form-textarea" placeholder="请列出本次摊位售卖/展示的OC作品及制品，例如：&#10;1. 星野绫亚克力牌（限量50个）&#10;2. 银河少女系列徽章套装&#10;3. 原创角色立绘明信片"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">摊位特殊需求</label>
+          <textarea class="form-textarea" placeholder="如需电源、特殊灯光、墙面悬挂等，请说明"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">备注说明</label>
+          <textarea class="form-textarea" placeholder="其他需要告知审核组的信息"></textarea>
+        </div>
+      </div>
+
+      <!-- 材料上传 -->
+      <div class="detail-block">
+        <h2>📎 辅助材料上传</h2>
+        <div class="upload-zone" id="boothUpload">
+          <input type="file" multiple hidden accept="image/*">
+          <div class="icon">📁</div>
+          <div class="text">点击或拖拽上传 <strong>过往参展作品、OC原创证明</strong> 等材料</div>
+          <div class="form-hint">支持 JPG/PNG，单张不超过 10MB</div>
+        </div>
+        <div class="upload-preview" id="boothPreview"></div>
+      </div>
+    </div>
+
+    <!-- 侧边栏 -->
+    <div class="detail-side">
+      <!-- 报名状态 -->
+      <div class="detail-block">
+        <h2>📋 我的报名状态</h2>
+        <div style="text-align:center;padding:16px 0">
+          <div style="font-size:14px;color:var(--text-light);margin-bottom:6px">当前状态</div>
+          <span class="badge badge-yellow" style="font-size:14px;padding:6px 16px">待提交</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--text-light)">所选展会</span><span>ONLY展·第七届</span></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--text-light)">摊位类型</span><span>标准摊位</span></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--text-light)">预估费用</span><strong style="color:var(--coral)">¥200</strong></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--text-light)">报名截止</span><span>2026.03.15</span></div>
+        </div>
+      </div>
+
+      <!-- 规则公示 -->
+      <div class="detail-block">
+        <h2>📜 申摊规则</h2>
+        <div style="font-size:13px;line-height:1.8;color:var(--text-light)">
+          <p style="margin-bottom:8px"><strong style="color:var(--text)">审核规则：</strong>提交后3个工作日内审核，作品须为原创OC相关。</p>
+          <p style="margin-bottom:8px"><strong style="color:var(--text)">摊位费用：</strong>审核通过后线上缴费，逾期视为放弃。</p>
+          <p style="margin-bottom:8px"><strong style="color:var(--text)">退摊规则：</strong>开展前14天可申请退摊退50%费用，14天内不退。</p>
+          <p><strong style="color:var(--text)">现场规范：</strong>禁止售卖盗版、非原创内容，遵守展会管理。</p>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block btn-lg">提交申摊申请</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container"><div class="footer-bottom">© 2026 OCplay · OC原创角色展会综合服务平台</div></div>
+</footer>
+<script src="js/main.js"></script>
+<script>initUpload('boothUpload','boothPreview');</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>内容审核中心 · OCplay后台</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="deco-bg"></div>
+
+<nav class="navbar">
+  <div class="nav-logo"><span class="logo-icon">🎨</span><span class="logo-text">OCplay</span></div>
+  <div class="nav-links"><a href="../index.html">前台首页</a></div>
+  <div class="nav-actions"><a href="../profile.html" class="btn btn-ghost btn-sm">退出管理</a></div>
+</nav>
+
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="group-label">数据概览</div>
+    <a href="dashboard.html">📊 数据仪表盘</a>
+    <div class="group-label">展会运营</div>
+    <a href="events.html">🎪 展会活动管理</a>
+    <a href="tickets.html">🎟 票务订单管理</a>
+    <div class="group-label">内容审核</div>
+    <a href="review.html" class="active">✅ 内容审核中心</a>
+    <div class="group-label">用户与配置</div>
+    <a href="users.html">👥 用户管理</a>
+    <a href="config.html">⚙ 公告与配置</a>
+  </aside>
+
+  <main class="admin-main">
+    <h1>内容审核中心</h1>
+    <div class="breadcrumb">首页 / 内容审核 / 审核中心</div>
+
+    <!-- Tab切换 作品/申摊审核 -->
+    <div class="profile-tabs" data-tabs data-target="#reviewPanels">
+      <a class="active" data-tab="works" style="cursor:pointer">OC作品审核 <span class="badge badge-hot">18</span></a>
+      <a data-tab="booths" id="booth" style="cursor:pointer">申摊信息审核 <span class="badge badge-hot">7</span></a>
+    </div>
+
+    <div id="reviewPanels">
+      <!-- 作品审核 -->
+      <div data-panel="works">
+        <!-- 审核标准提示 -->
+        <div class="declare-box" style="margin-bottom:20px">
+          <div class="text">
+            <strong>📋 审核标准：</strong>① 是否为原创OC内容 ② 无违规低俗内容 ③ 无抄袭搬运 ④ 无商业侵权。审核通过后公开展示，驳回需填写原因，违规作品可下架并封禁账号。
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <div class="filter-chips">
+            <span class="chip active">全部待审 18</span>
+            <span class="chip">OC人设</span>
+            <span class="chip">手工制品</span>
+            <span class="chip">周边衍生</span>
+          </div>
+          <button class="btn btn-outline btn-sm">批量审核</button>
+        </div>
+
+        <!-- 审核项1 -->
+        <div class="review-item">
+          <div class="preview" style="background:linear-gradient(135deg,#FFD6E0,#FF8FAB)"></div>
+          <div class="content">
+            <div class="title">星砂系列 · 限定徽章套装</div>
+            <div class="meta"><span>👤 星砂铺</span><span>📂 周边衍生</span><span>🕒 1天前提交</span><span>👁 浏览 0</span></div>
+            <div class="desc">原创OC角色"星砂"系列徽章套装，限量50套，含3款不同造型徽章。材质为马口铁+亚克力覆膜，直径56mm。</div>
+            <div class="actions">
+              <button class="btn btn-approve btn-sm">✓ 通过</button>
+              <button class="btn btn-reject btn-sm">✗ 驳回</button>
+              <button class="btn btn-ghost btn-sm">查看大图</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--coral)">下架+封禁</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 审核项2 -->
+        <div class="review-item">
+          <div class="preview" style="background:linear-gradient(135deg,#E8E0FF,#B4A7E8)"></div>
+          <div class="content">
+            <div class="title">夜行者 · 黑猫人设</div>
+            <div class="meta"><span>👤 墨白</span><span>📂 OC人设</span><span>🕒 2天前提交</span></div>
+            <div class="desc">原创暗系OC角色"夜行者"，黑猫拟人化人设，含立绘3张+细节图2张。设定为夜行守护者，性格冷淡寡言。</div>
+            <div class="actions">
+              <button class="btn btn-approve btn-sm">✓ 通过</button>
+              <button class="btn btn-reject btn-sm">✗ 驳回</button>
+              <button class="btn btn-ghost btn-sm">查看大图</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 审核项3 -->
+        <div class="review-item">
+          <div class="preview" style="background:linear-gradient(135deg,#FFE08C,#FFD6E0)"></div>
+          <div class="content">
+            <div class="title">未命名作品（疑似搬运）</div>
+            <div class="meta"><span>👤 新用户_x9k2</span><span>📂 OC人设</span><span>🕒 3天前提交</span><span class="badge badge-hot">⚠ 风险提示</span></div>
+            <div class="desc">系统检测该作品与已有公开OC高度相似，疑似搬运抄袭。请人工复核后决定处理方式。</div>
+            <div class="actions">
+              <button class="btn btn-approve btn-sm">✓ 通过</button>
+              <button class="btn btn-reject btn-sm">✗ 驳回</button>
+              <button class="btn btn-ghost btn-sm">查看大图</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--coral)">下架+封禁</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 申摊审核 -->
+      <div data-panel="booths" style="display:none">
+        <div class="declare-box" style="margin-bottom:20px">
+          <div class="text">
+            <strong>📋 申摊审核标准：</strong>① 符合展会申摊规则 ② 作品为原创OC相关 ③ 无违规售卖内容 ④ 信息填写完整。通过后开通摊位权限并生成缴费入口，可跟进缴费与参展资格确认。
+          </div>
+        </div>
+
+        <div class="review-item">
+          <div class="preview" style="background:linear-gradient(135deg,#A8E6CF,#A0D8F1)"></div>
+          <div class="content">
+            <div class="title">摊位申请 · ONLY展·第七届 · 标准摊位</div>
+            <div class="meta"><span>👤 摊主：薄荷工坊</span><span>📞 138****6677</span><span>🏪 标准摊位 ¥200</span><span>🕒 2天前提交</span></div>
+            <div class="desc"><strong>售卖清单：</strong>兔耳少女亚克力牌（限量50个）、原创角色徽章套装、手绘明信片。均为原创OC相关制品，已上传过往参展作品证明。</div>
+            <div class="actions">
+              <button class="btn btn-approve btn-sm">✓ 审核通过</button>
+              <button class="btn btn-reject btn-sm">✗ 驳回</button>
+              <button class="btn btn-ghost btn-sm">查看材料</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-item">
+          <div class="preview" style="background:linear-gradient(135deg,#FFD6E0,#FFE08C)"></div>
+          <div class="content">
+            <div class="title">摊位申请 · ONLY展·第七届 · 精品摊位</div>
+            <div class="meta"><span>👤 摊主：星砂铺</span><span>📞 139****2233</span><span>🏪 精品摊位 ¥500</span><span>🕒 3天前提交</span></div>
+            <div class="desc"><strong>售卖清单：</strong>星砂系列限定徽章套装、亚克力立牌、原创角色插画集。材料齐全，过往参展记录良好。</div>
+            <div class="actions">
+              <button class="btn btn-approve btn-sm">✓ 审核通过</button>
+              <button class="btn btn-reject btn-sm">✗ 驳回</button>
+              <button class="btn btn-ghost btn-sm">查看材料</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 审核记录 -->
+    <div class="detail-block" style="margin-top:24px">
+      <h2>📋 审核日志（可追溯）</h2>
+      <div class="data-table">
+        <table>
+          <thead><tr><th>时间</th><th>审核员</th><th>类型</th><th>对象</th><th>结果</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>2026-03-01 15:30</td><td>管理员</td><td>作品审核</td><td>星野绫·银河少女</td><td><span class="badge badge-mint">通过</span></td><td>—</td></tr>
+            <tr><td>2026-03-01 14:20</td><td>管理员</td><td>申摊审核</td><td>墨白·标准摊位</td><td><span class="badge badge-mint">通过</span></td><td>已开通缴费</td></tr>
+            <tr><td>2026-02-28 16:10</td><td>管理员</td><td>作品审核</td><td>未命名作品</td><td><span class="badge badge-hot">驳回</span></td><td>图片清晰度不足</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

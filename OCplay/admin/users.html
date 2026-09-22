@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>用户管理 · OCplay后台</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="deco-bg"></div>
+
+<nav class="navbar">
+  <div class="nav-logo"><span class="logo-icon">🎨</span><span class="logo-text">OCplay</span></div>
+  <div class="nav-links"><a href="../index.html">前台首页</a></div>
+  <div class="nav-actions"><a href="../profile.html" class="btn btn-ghost btn-sm">退出管理</a></div>
+</nav>
+
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="group-label">数据概览</div>
+    <a href="dashboard.html">📊 数据仪表盘</a>
+    <div class="group-label">展会运营</div>
+    <a href="events.html">🎪 展会活动管理</a>
+    <a href="tickets.html">🎟 票务订单管理</a>
+    <div class="group-label">内容审核</div>
+    <a href="review.html">✅ 内容审核中心</a>
+    <div class="group-label">用户与配置</div>
+    <a href="users.html" class="active">👥 用户管理</a>
+    <a href="config.html">⚙ 公告与配置</a>
+  </aside>
+
+  <main class="admin-main">
+    <h1>用户管理</h1>
+    <div class="breadcrumb">首页 / 用户与配置 / 用户管理</div>
+
+    <!-- 筛选搜索 -->
+    <div class="filter-bar" style="flex-direction:row;align-items:center;gap:12px">
+      <input class="form-input" placeholder="按昵称 / 手机号 / ID搜索" style="max-width:280px">
+      <select class="form-select" style="max-width:140px"><option>全部状态</option><option>正常</option><option>已禁言</option><option>已封禁</option></select>
+      <select class="form-select" style="max-width:140px"><option>全部身份</option><option>普通用户</option><option>创作者</option></select>
+      <button class="btn btn-primary btn-sm">搜索</button>
+      <button class="btn btn-outline btn-sm" style="margin-left:auto">导出用户数据</button>
+    </div>
+
+    <!-- 用户列表 -->
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr><th>用户ID</th><th>昵称</th><th>手机号</th><th>身份</th><th>作品数</th><th>订单数</th><th>注册时间</th><th>状态</th><th>操作</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OC20260001</td><td><strong>星野眠</strong></td><td>138****8888</td><td><span class="badge badge-lavender">创作者</span></td><td>28</td><td>5</td><td>2026-01-15</td>
+            <td><span class="badge badge-mint">正常</span></td>
+            <td class="actions">
+              <button class="btn btn-ghost btn-sm">详情</button>
+              <button class="btn btn-ghost btn-sm" style="color:#B8860B">警告</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--coral)">封禁</button>
+            </td>
+          </tr>
+          <tr>
+            <td>OC20260002</td><td><strong>墨白</strong></td><td>139****6677</td><td><span class="badge badge-lavender">创作者</span></td><td>42</td><td>8</td><td>2026-01-20</td>
+            <td><span class="badge badge-mint">正常</span></td>
+            <td class="actions">
+              <button class="btn btn-ghost btn-sm">详情</button>
+              <button class="btn btn-ghost btn-sm" style="color:#B8860B">警告</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--coral)">封禁</button>
+            </td>
+          </tr>
+          <tr>
+            <td>OC20260003</td><td><strong>云朵猫</strong></td><td>137****5566</td><td><span class="badge badge-gray">普通用户</span></td><td>0</td><td>3</td><td>2026-02-01</td>
+            <td><span class="badge badge-mint">正常</span></td>
+            <td class="actions">
+              <button class="btn btn-ghost btn-sm">详情</button>
+              <button class="btn btn-ghost btn-sm" style="color:#B8860B">警告</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--coral)">封禁</button>
+            </td>
+          </tr>
+          <tr>
+            <td>OC20260018</td><td><strong>新用户_x9k2</strong></td><td>136****1234</td><td><span class="badge badge-gray">普通用户</span></td><td>1</td><td>0</td><td>2026-02-25</td>
+            <td><span class="badge badge-yellow">已禁言</span></td>
+            <td class="actions">
+              <button class="btn btn-ghost btn-sm">详情</button>
+              <button class="btn btn-ghost btn-sm" style="color:#4A9D7E">解禁</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--coral)">永久封禁</button>
+            </td>
+          </tr>
+          <tr>
+            <td>OC20250099</td><td><strong>搬运党007</strong></td><td>135****0000</td><td><span class="badge badge-gray">普通用户</span></td><td>0</td><td>0</td><td>2025-12-10</td>
+            <td><span class="badge badge-hot">已封禁</span></td>
+            <td class="actions">
+              <button class="btn btn-ghost btn-sm">详情</button>
+              <button class="btn btn-ghost btn-sm" style="color:#4A9D7E">解封</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination">
+      <a>‹</a><a class="active">1</a><a>2</a><a>3</a><a>›</a>
+    </div>
+
+    <!-- 账号权限说明 -->
+    <div class="detail-block" style="margin-top:24px">
+      <h2>🔒 账号权限操作说明</h2>
+      <div style="font-size:13px;line-height:1.8;color:var(--text-light)">
+        <p><strong style="color:var(--text);color:#B8860B">警告：</strong>对违规用户发送警告消息，记录违规一次，账号正常使用。</p>
+        <p><strong style="color:var(--text)">禁言：</strong>禁止用户发布作品、留言互动，可设置禁言时长，其他功能正常。</p>
+        <p><strong style="color:var(--text)">临时封禁：</strong>禁止登录与全部前端操作，可设置封禁时长，到期自动解封。</p>
+        <p><strong style="color:var(--text);color:var(--coral)">永久封禁：</strong>永久禁止账号登录，需谨慎操作，所有作品自动下架。</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
