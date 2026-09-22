@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>票务订单管理 · OCplay后台</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="deco-bg"></div>
+
+<nav class="navbar">
+  <div class="nav-logo"><span class="logo-icon">🎨</span><span class="logo-text">OCplay</span></div>
+  <div class="nav-links"><a href="../index.html">前台首页</a></div>
+  <div class="nav-actions"><a href="../profile.html" class="btn btn-ghost btn-sm">退出管理</a></div>
+</nav>
+
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="group-label">数据概览</div>
+    <a href="dashboard.html">📊 数据仪表盘</a>
+    <div class="group-label">展会运营</div>
+    <a href="events.html">🎪 展会活动管理</a>
+    <a href="tickets.html" class="active">🎟 票务订单管理</a>
+    <div class="group-label">内容审核</div>
+    <a href="review.html">✅ 内容审核中心</a>
+    <div class="group-label">用户与配置</div>
+    <a href="users.html">👥 用户管理</a>
+    <a href="config.html">⚙ 公告与配置</a>
+  </aside>
+
+  <main class="admin-main">
+    <h1>票务订单管理</h1>
+    <div class="breadcrumb">首页 / 展会运营 / 票务订单管理</div>
+
+    <!-- Tab切换 -->
+    <div class="profile-tabs" data-tabs data-target="#ticketPanels">
+      <a class="active" data-tab="orders" style="cursor:pointer">订单管理</a>
+      <a data-tab="types" style="cursor:pointer">票种配置</a>
+      <a data-tab="eTickets" style="cursor:pointer">电子票核销</a>
+      <a data-tab="refund" style="cursor:pointer">退票审核 <span class="badge badge-hot">3</span></a>
+    </div>
+
+    <div id="ticketPanels">
+      <!-- 订单管理 -->
+      <div data-panel="orders">
+        <div class="filter-bar" style="flex-direction:row;align-items:center;gap:12px">
+          <input class="form-input" placeholder="搜索订单号/手机号" style="max-width:240px">
+          <select class="form-select" style="max-width:160px"><option>全部展会</option><option>ONLY展·第七届</option></select>
+          <div class="filter-chips">
+            <span class="chip active">全部</span>
+            <span class="chip">待支付</span>
+            <span class="chip">已支付</span>
+            <span class="chip">已核销</span>
+            <span class="chip">已退票</span>
+          </div>
+          <button class="btn btn-outline btn-sm" style="margin-left:auto">导出订单</button>
+        </div>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr><th>订单号</th><th>用户</th><th>展会</th><th>票种/数量</th><th>金额</th><th>状态</th><th>下单时间</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OC20260301001</td><td>星野眠</td><td>ONLY展·第七届</td><td>普通票 ×1</td><td>¥58</td>
+                <td><span class="badge badge-mint">已支付</span></td><td>2026-03-01 10:22</td>
+                <td class="actions"><button class="btn btn-ghost btn-sm">详情</button></td>
+              </tr>
+              <tr>
+                <td>OC20260301002</td><td>云朵猫</td><td>樱花季茶会</td><td>茶会票 ×1</td><td>¥88</td>
+                <td><span class="badge badge-yellow">待支付</span></td><td>2026-03-01 11:05</td>
+                <td class="actions"><button class="btn btn-ghost btn-sm" style="color:var(--coral)">异常处理</button></td>
+              </tr>
+              <tr>
+                <td>OC20260228015</td><td>墨白</td><td>综合OC展·春季</td><td>VIP票 ×2</td><td>¥256</td>
+                <td><span class="badge badge-gray">已核销</span></td><td>2026-02-28 09:30</td>
+                <td class="actions"><button class="btn btn-ghost btn-sm">详情</button></td>
+              </tr>
+              <tr>
+                <td>OC20260227088</td><td>潮汐绘</td><td>ONLY展·第七届</td><td>VIP票 ×1</td><td>¥128</td>
+                <td><span class="badge badge-gray">已退票</span></td><td>2026-02-27 14:18</td>
+                <td class="actions"><button class="btn btn-ghost btn-sm">详情</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 票种配置 -->
+      <div data-panel="types" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <strong style="font-size:16px">OC原创角色ONLY展·第七届 票种</strong>
+          <button class="btn btn-primary btn-sm">➕ 新增票种</button>
+        </div>
+        <div class="data-table">
+          <table>
+            <thead><tr><th>票种名称</th><th>价格</th><th>库存</th><th>已售</th><th>售卖时间</th><th>权益</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr><td>普通票</td><td>¥58</td><td>500</td><td>414</td><td>03.01-04.17</td><td>入场+集章卡+明信片</td><td class="actions"><button class="btn btn-soft btn-sm">编辑</button></td></tr>
+              <tr><td>VIP票</td><td>¥128</td><td>100</td><td>72</td><td>03.01-04.10</td><td>优先入场+限定礼包+签绘通道</td><td class="actions"><button class="btn btn-soft btn-sm">编辑</button></td></tr>
+              <tr><td>创作者专属票</td><td>¥0</td><td>120</td><td>96</td><td>审核通过后</td><td>摊主免费资格</td><td class="actions"><button class="btn btn-soft btn-sm">编辑</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 电子票核销 -->
+      <div data-panel="eTickets" style="display:none">
+        <div class="detail-block">
+          <h2>🎟 电子票核销查询</h2>
+          <div class="form-row" style="margin-bottom:16px">
+            <div class="form-group"><label class="form-label">核销码</label><input class="form-input" placeholder="输入电子票核销码"></div>
+            <div class="form-group"><label class="form-label">或按手机号</label><input class="form-input" placeholder="用户手机号"></div>
+          </div>
+          <button class="btn btn-primary">查询核销记录</button>
+        </div>
+        <div class="data-table">
+          <table>
+            <thead><tr><th>核销码</th><th>用户</th><th>展会</th><th>票种</th><th>核销时间</th><th>核销方式</th></tr></thead>
+            <tbody>
+              <tr><td>**** **** 8821</td><td>墨白</td><td>综合OC展·春季</td><td>VIP票</td><td>2026-02-28 09:45</td><td>线下扫码</td></tr>
+              <tr><td>**** **** 6634</td><td>星砂铺</td><td>综合OC展·春季</td><td>普通票</td><td>2026-02-28 10:12</td><td>线下扫码</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 退票审核 -->
+      <div data-panel="refund" style="display:none">
+        <div class="review-item" style="margin-bottom:14px">
+          <div class="content" style="flex:1">
+            <div class="title">退票申请 · OC20260227088</div>
+            <div class="meta"><span>用户：潮汐绘</span><span>展会：ONLY展·第七届</span><span>票种：VIP票 ×1</span><span>金额：¥128</span></div>
+            <div class="desc">退票原因：行程冲突无法到场，申请退票。距开展还有50天，符合全额退票规则。</div>
+            <div class="actions">
+              <button class="btn btn-approve btn-sm">通过退票</button>
+              <button class="btn btn-reject btn-sm">驳回</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
